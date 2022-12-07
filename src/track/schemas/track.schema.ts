@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
+import { User } from 'src/user/schemas/user.schema';
 
 export type TrackDocument = mongoose.HydratedDocument<Track>;
 
@@ -25,6 +26,9 @@ export class Track {
 
   @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }] })
   comments: Comment[];
+
+  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }] })
+  user: User;
 }
 
 export const TrackSchema = SchemaFactory.createForClass(Track);
