@@ -35,7 +35,7 @@ import * as path from 'path';
       rootPath: path.resolve(__dirname, 'static'),
     }),
     MongooseModule.forRoot(
-      'mongodb+srv://emil9898:Emil9898@cluster0.hbhhbv6.mongodb.net/?retryWrites=true&w=majority',
+      'mongodb+srv://<user>:<password>@cluster0.hbhhbv6.mongodb.net/?retryWrites=true&w=majority',
     ),
 
     TrackModule,
